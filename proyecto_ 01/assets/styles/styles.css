@@ -1,0 +1,225 @@
+:root {
+  --campsite-brand-color: #e7974f;
+  --campsite-brand-color-dark: #ad570c;
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+/* Globals */
+
+.flex {
+  display: flex;
+}
+
+.nav {
+  width: 100%;
+  padding: 4rem 1.5rem;
+}
+
+.nav ul {
+  display: flex;
+  column-gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.nav ul li {
+  list-style: none;
+}
+.nav ul li a {
+  color: var(--campsite-brand-color-dark);
+  font-weight: bold;
+}
+
+.bg-image {
+  background-image: url("../images/programacion-background.jpg");
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bg-image .img-logo {
+  width: 6rem;
+  padding-bottom: 5rem;
+  margin-top: -3rem;
+}
+
+.bg-image h1 {
+  color: white;
+  text-shadow: 1px 1px 10px black;
+}
+
+/* Index styles */
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 50%;
+  padding-top: 1rem;
+}
+
+.main .dates-title {
+  color: var(--campsite-brand-color-dark);
+  margin: 1rem;
+}
+
+.dates-section {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dates-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid var(--campsite-brand-color-dark);
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.dates-content:last-child {
+  border-bottom: none;
+}
+
+.dates-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.dates-info {
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+}
+
+.dates-day {
+  font-size: 2.5rem;
+  margin-right: 0.25rem;
+}
+
+.dates-month-day {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-academy {
+  background-color: var(--campsite-brand-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem 1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    max-width: 90%;
+  }
+}
+
+/* Contact styles */
+
+.section-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-contact {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+.section-contact {
+  margin: 1rem;
+}
+
+.section-contact a {
+  font-size: 1.25rem;
+  color: var(--campsite-brand-color-dark);
+}
+
+/* About styles */
+
+.about-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-block: 2rem;
+}
+
+.about-title h3 {
+  color: var(--campsite-brand-color-dark);
+}
+
+.about-title p {
+  margin-block: 1rem;
+  line-height: 1.2;
+}
+
+.left-image {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.right-image {
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.section-about h4 {
+  font-weight: 700;
+}
+.section-about:nth-child(2) h4 {
+  text-align: right;
+}
+
+.section-about {
+  flex-direction: column;
+  margin-block: 2rem;
+}
+
+.section-about img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
