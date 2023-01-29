@@ -1,0 +1,120 @@
+/* Form styles */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--campsite-brand-color-dark);
+}
+
+.form-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem auto;
+}
+
+.form-contact form {
+  width: 80%;
+}
+
+.form-contact h3 {
+  color: var(--campsite-brand-color-dark);
+  font-size: 1.5rem;
+  margin: 2rem;
+}
+
+.form-contact p {
+  color: var(--campsite-brand-color-dark);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.form-container {
+  display: flex;
+  margin: 2rem 1rem;
+}
+
+.personal-data,
+.course-data {
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.personal-data div,
+.course-data div {
+  align-self: start;
+  width: 100%;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  display: flex;
+  margin: 0.25rem auto;
+}
+
+.column {
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.row {
+  flex-direction: row;
+  column-gap: 0.5rem;
+}
+
+select,
+input,
+textarea {
+  outline: 0;
+}
+
+input,
+select {
+  border: 1px solid var(--campsite-brand-color-dark);
+  padding: 0.25rem;
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--campsite-brand-color-dark);
+  border-radius: 50%;
+  background-clip: content-box;
+  padding: 3px;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--campsite-brand-color);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--campsite-brand-color-dark);
+
+  background-clip: content-box;
+  padding: 3px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--campsite-brand-color);
+}
+
+.button-submit {
+  width: 25%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+  }
+}

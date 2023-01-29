@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conocenos - Campsite Academy</title>
-    <link rel="stylesheet" href="../assets/styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="../assets/styles/globals.css" />
+    <link rel="stylesheet" href="../assets/styles/contact.css" />
   </head>
   <body>
     <header>
@@ -28,7 +33,7 @@
 
       <div class="bg-image">
         <img
-          class="img-logo"
+          class="img-logo animate__animated animate__zoomIn"
           src="../assets/images/Logo.png"
           alt="Campsite Logo"
         />
@@ -37,14 +42,25 @@
     </header>
     <main class="main">
       <div class="section-contact">
-        <h3 class="title-contact">Contacto</h3>
+        <h4 class="title-contact">Contacto</h4>
         <p>Para cualquier duda o información sobre los cursos, contáctanos!</p>
 
-        <a href="tel:+34626482244">Tlf: +34 626 48 22 44</a>
-        <a href="mailto:hello@campsite.academy"
-          >Correo electrónico: hello@campsite.academy</a
-        >
+        <div>
+          <span>📱 <a href="tel:+34626482244">Tlf: +34 626 48 22 44</a> </span>
+
+          <span>
+            📧
+            <a href="mailto:hello@campsite.academy"
+              >Correo electrónico: hello@campsite.academy</a
+            >
+          </span>
+        </div>
       </div>
     </main>
+    <footer class="footer">
+      <p>Campsite &copy; <span class="date"></span></p>
+      <div class="logo_mini"></div>
+    </footer>
+    <script src="../assets/scripts/date.js" defer></script>
   </body>
 </html>

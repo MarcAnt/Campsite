@@ -1,0 +1,32 @@
+/* Contact styles */
+
+.section-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-contact {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem;
+  color: var(--campsite-brand-color-dark);
+}
+
+.section-contact {
+  margin: 1rem;
+}
+.section-contact div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
+  text-align: center;
+}
+.section-contact a {
+  font-size: 1.25rem;
+  color: var(--campsite-brand-color-dark);
+}

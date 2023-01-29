@@ -1,0 +1,128 @@
+/* Index styles */
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 55%;
+  padding-top: 1rem;
+  overflow-x: hidden;
+}
+
+.main .dates-title {
+  color: var(--campsite-brand-color-dark);
+  margin: 1rem;
+}
+
+.dates-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  column-gap: 2rem;
+}
+
+.dates-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  margin-block: 2rem;
+  flex: 1;
+  gap: 4rem;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.dates-content::after {
+  content: "";
+  width: 100%;
+  border-top: 1px solid var(--campsite-brand-color-dark);
+  transition: all 0.2s ease-in-out;
+}
+.dates-content::before {
+  content: "";
+  width: 100%;
+  border-bottom: 1px solid var(--campsite-brand-color-dark);
+  transition: all 0.2s ease-in-out;
+}
+
+.dates-content:hover {
+  background-color: var(--campsite-brand-color);
+  border-radius: 0.5rem;
+}
+
+.dates-content:hover .button-academy {
+  background-color: white;
+  color: var(--campsite-brand-color);
+}
+
+.dates-content:hover::after {
+  transform: translateY(15px);
+}
+.dates-content:hover::before {
+  transform: translateY(-15px);
+}
+
+.dates-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dates-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.dates-day {
+  font-size: 2.5rem;
+  border-bottom: 1px solid var(--campsite-brand-color-dark);
+}
+
+.dates-content:hover .dates-day {
+  color: white;
+}
+
+.dates-month-day {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dates-section {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .dates-content {
+    width: 80%;
+  }
+
+  .dates-content {
+    background-color: var(--campsite-brand-color);
+    border-radius: 0.5rem;
+  }
+
+  .dates-content .button-academy {
+    background-color: white;
+    color: var(--campsite-brand-color);
+  }
+
+  .dates-content::after {
+    transform: translateY(15px);
+  }
+  .dates-content::before {
+    transform: translateY(-15px);
+  }
+}

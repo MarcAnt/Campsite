@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario - Campsite Academy</title>
+    <link rel="stylesheet" href="../assets/styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href="../index.html">Home</a>
+          </li>
+          <li>
+            <a href="./conocenos.html">Conócenos</a>
+          </li>
+          <li>
+            <a href="./info.html">Estudiantes</a>
+          </li>
+          <li>
+            <a href="./contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="bg-image">
+        <img
+          class="img-logo"
+          src="../assets/images/Logo.png"
+          alt="Campsite Logo"
+        />
+        <h1>Campsite Academy</h1>
+      </div>
+    </header>
+
+    <div class="formulario-contacto">
+      <p>Informacion de Contacto</p>
+      <form action="">
+        <div class="form-container personal-data">
+          <div class="form-control">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-control">
+            <label for="lastname">Apellidos</label>
+            <input type="text" id="lastname" name="lastname" required />
+          </div>
+          <div class="form-control">
+            <label for="age">Edad</label>
+            <input type="number" id="age" name="age" required />
+          </div>
+          <div class="form-control">
+            <label for="postcode">Código Postal</label>
+            <input type="number" id="postcode" name="postcode" required />
+          </div>
+          <div class="form-control">
+            <label for="phone">Telefono</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="form-control">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-control">
+            <p>Genero</p>
+            <label for="woman">Mujer</label>
+            <input type="radio" id="woman" name="gender" value="woman" />
+            <label for="man">Hombre</label>
+            <input type="radio" id="man" name="gender" value="man" />
+            <label for="other">Otro</label>
+            <input type="radio" id="other" name="gender" value="other" />
+          </div>
+        </div>
+
+        <div class="form-container course-data">
+          <div class="form-control">
+            <p>Tipo de Curso</p>
+            <label for="full">Full-Time</label>
+            <input
+              type="radio"
+              id="full"
+              name="course-type"
+              value="full"
+              required
+            />
+            <label for="part">Part-Time</label>
+            <input
+              type="radio"
+              id="part"
+              name="course-type"
+              value="part"
+              required
+            />
+          </div>
+
+          <div class="form-control">
+            <label for="cities">Ciudad</label>
+            <select name="cities" id="cities">
+              <option value="albacete">Albacete</option>
+              <option value="madrid">Madrid</option>
+              <option value="barcelona">Barcelona</option>
+              <option value="caracas">Caracas</option>
+            </select>
+          </div>
+
+          <div class="form-control">
+            <label for="start-date">Fecha de Comienzo</label>
+            <input type="date" id="start-date" name="start-date" required />
+          </div>
+          <div class="form-control">
+            <p>Selecciona las tecnologias</p>
+
+            <label for="html">HTML</label>
+            <input type="checkbox" id="html" value="html" />
+            <label for="cbox2">CSS</label>
+            <input type="checkbox" id="cbox2" value="css" />
+            <label for="js">JavaScript</label>
+            <input type="checkbox" id="js" value="javascript" />
+          </div>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>

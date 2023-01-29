@@ -1,0 +1,123 @@
+/* Info styles */
+
+.info-lists,
+.info-table,
+.info-details {
+  margin: 3rem auto;
+  gap: 2rem;
+  display: flex;
+  width: 100%;
+}
+
+.info-table,
+.info-details {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.info-lists {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.info-lists .info-perks p,
+.info-lists .info-todo p {
+  text-align: center;
+  margin: 1rem;
+}
+
+.info-table h3 {
+  color: var(--campsite-brand-color-dark);
+}
+
+.table-students {
+  border-collapse: collapse;
+  margin: 0 1rem;
+}
+
+.table-students thead {
+  color: var(--campsite-brand-color-dark);
+  text-align: center;
+}
+
+.table-students th,
+td {
+  border-bottom: 1px solid var(--campsite-brand-color);
+  text-align: center;
+}
+
+.table-students th {
+  width: 10%;
+}
+.table-students th:last-child() {
+  width: 20%;
+}
+
+.table-students td:nth-child(4) {
+  font-size: 0.85rem;
+}
+
+.table-students td,
+th {
+  padding: 1rem 0;
+}
+
+.table-students tbody td a {
+  color: var(--campsite-brand-color);
+}
+.table-students tbody td a svg path {
+  color: var(--campsite-brand-color-dark);
+}
+.table-students tbody td a svg {
+  width: 35px;
+}
+
+.info-lists ul li {
+  color: var(--campsite-brand-color-dark);
+}
+
+.info-lists ul li ol {
+  margin: 1rem 0 1rem 1rem;
+  color: var(--campsite-brand-color);
+}
+
+.info-lists ul li ul {
+  margin: 1rem 0 1rem 1rem;
+  color: var(--campsite-brand-color);
+}
+
+.info-lists ul li span {
+  color: #000;
+}
+
+.info-details li {
+  margin-block: 0.25rem;
+}
+
+.info-details li a {
+  color: var(--campsite-brand-color-dark);
+}
+.info-details li p {
+  color: #000;
+}
+
+.info-lists dl {
+  text-align: center;
+}
+.info-lists dl dd {
+  margin: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .info-lists {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .table-students {
+    width: 100%;
+  }
+}

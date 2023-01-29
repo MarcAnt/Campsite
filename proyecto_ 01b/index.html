@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Campsite Academy</title>
-    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="assets/styles/globals.css" />
+    <link rel="stylesheet" href="assets/styles/index.css" />
   </head>
   <body>
     <header>
@@ -28,7 +33,7 @@
 
       <div class="bg-image">
         <img
-          class="img-logo"
+          class="img-logo animate__animated animate__zoomIn"
           src="assets/images/Logo.png"
           alt="Campsite Logo"
         />
@@ -38,7 +43,7 @@
     <main class="main">
       <h2 class="dates-title">Próximas Fechas</h2>
       <div class="dates-section">
-        <div class="dates-content">
+        <div class="dates-content animate__animated animate__bounce">
           <div class="dates-wrapper">
             <p class="dates-day">26</p>
             <div class="dates-month-day">
@@ -56,7 +61,7 @@
           >
         </div>
 
-        <div class="dates-content">
+        <div class="dates-content animate__animated animate__bounce">
           <div class="dates-wrapper">
             <p class="dates-day">26</p>
             <div class="dates-month-day">
@@ -75,7 +80,7 @@
           >
         </div>
 
-        <div class="dates-content">
+        <div class="dates-content animate__animated animate__bounce">
           <div class="dates-wrapper">
             <p class="dates-day">16</p>
             <div class="dates-month-day">
@@ -94,5 +99,10 @@
         </div>
       </div>
     </main>
+    <footer class="footer">
+      <p>Campsite &copy; <span class="date"></span></p>
+      <div class="logo_mini"></div>
+    </footer>
+    <script src="./assets/scripts/date.js" defer></script>
   </body>
 </html>

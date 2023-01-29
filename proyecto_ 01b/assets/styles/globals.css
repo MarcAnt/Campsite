@@ -1,0 +1,131 @@
+:root {
+  --campsite-brand-color: #e7974f;
+  --campsite-brand-color-dark: #ad570c;
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+input,
+select,
+textarea {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Globals */
+
+.flex {
+  display: flex;
+}
+
+.nav {
+  width: 100%;
+  padding: 4rem 1.5rem;
+}
+
+.nav ul {
+  display: flex;
+  column-gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.nav ul li {
+  list-style: none;
+}
+.nav ul li a {
+  color: var(--campsite-brand-color-dark);
+  font-weight: bold;
+}
+
+@media (max-width: 420px) {
+  .nav ul {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+  }
+
+  .nav ul li {
+    flex: 1 1;
+  }
+}
+
+.bg-image {
+  background-image: url("../images/programacion-background.jpg");
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-attachment: fixed;
+}
+
+.bg-image .img-logo {
+  width: 6rem;
+  padding-bottom: 5rem;
+  margin-top: -3rem;
+}
+
+.bg-image h1 {
+  color: white;
+  text-shadow: 1px 1px 10px black;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 55%;
+  padding-top: 1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: black;
+  padding: 1rem;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.button-academy {
+  background-color: var(--campsite-brand-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem 1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  transition: background-color, color, 0.5s ease-in-out;
+}
+
+.logo_mini {
+  background-image: url(../images/logo_mini.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50px;
+  padding: 2rem;
+}
