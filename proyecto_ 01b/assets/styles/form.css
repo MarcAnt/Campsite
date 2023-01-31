@@ -58,6 +58,13 @@
   margin: 0.25rem auto;
 }
 
+.course-data .form-control div:first-child {
+  width: 30%;
+}
+.genre .form-control div:first-child {
+  width: 30%;
+}
+
 .column {
   flex-direction: column;
   row-gap: 0.5rem;
