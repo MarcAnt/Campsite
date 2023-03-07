@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla Competiciones</title>
+    <link href="../../styles/output.css" rel="stylesheet" />
+    <script type="module" src="scripts.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body class="bg-yellow-50">
+    <header
+      class="border-b-[0.5px] border-b-orange-500 w-full p-5 bg-gradient-to-r to-red-200 from-yellow-200 shadow-orange-700 h-[20vh]"
+    >
+      <nav class="flex justify-between items-center w-full h-full">
+        <div class="w-1/2 h-full flex items-center justify-center">
+          <a
+            href="#table-matches"
+            class="p-3 text-center flex items-center justify-center bg-black text-white md:font-bold md:text-sm lg:text-xl xl:text-xl"
+          >
+            <p class="drop-shadow-lg">Competiciones</p>
+          </a>
+        </div>
+
+        <span id="logoLaLiga" class="flex items-center justify-center"></span>
+
+        <div class="w-1/2 h-full flex items-center justify-center">
+          <a
+            href="#table-standings"
+            class="p-3 text-center flex items-center justify-center bg-black text-white md:font-bold md:text-sm lg:text-xl xl:text-xl"
+          >
+            <p class="drop-shadow-lg">Clasificaciones</p>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="m-10 flex" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a
+              href="../../../index.html"
+              class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-orange-900 dark:text-orange-700"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-4 h-4 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                ></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg
+                aria-hidden="true"
+                class="w-6 h-6 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <p
+                class="ml-1 text-sm font-medium text-gray-700 md:ml-2text-gray-700 hover:text-orange-900 dark:text-orange-400"
+              >
+                Tablas
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="m-10">
+        <div class="items-center w-full">
+          <div
+            class="flex items-center w-full justify-between py-3 search-bar-container"
+          >
+            <h1
+              class="animate__fadeInDown mb-4 text-2xl font-extrabold leading-none tracking-tight text-orange-900 md:text-4xl lg:text-4xl flex justify-center items-center"
+              id="title-competitions"
+            >
+              <span>Competiciones</span>
+            </h1>
+
+            <div class="flex justify-end items-center w-full">
+              <div class="hidden" id="checkbox-filters">
+                <div class="flex">
+                  <div class="flex items-center mr-4">
+                    <input
+                      checked
+                      id="all"
+                      type="radio"
+                      value="ALL"
+                      name="filter-matches"
+                      data-search-by=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="all"
+                      class="ml-2 text-sm font-medium text-orange-900"
+                      >Todos</label
+                    >
+                  </div>
+                  <div class="flex items-center mr-4">
+                    <input
+                      id="won"
+                      type="radio"
+                      value="WINNER"
+                      name="filter-matches"
+                      data-search-by=""
+                      class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-orange-500 dark:focus:ring-orange-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="won"
+                      class="ml-2 text-sm font-medium text-orange-900"
+                      >Ganados</label
+                    >
+                  </div>
+                  <div class="flex items-center mr-4">
+                    <input
+                      id="lost"
+                      type="radio"
+                      value="LOSER"
+                      name="filter-matches"
+                      data-search-by=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="lost"
+                      class="ml-2 text-sm font-medium text-orange-900"
+                      >Perdidos</label
+                    >
+                  </div>
+                  <div class="flex items-center mr-4">
+                    <input
+                      id="draw"
+                      type="radio"
+                      value="DRAW"
+                      name="filter-matches"
+                      data-search-by=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="draw"
+                      class="ml-2 text-sm font-medium text-orange-900"
+                      >Empate</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <form id="search-form" class="w-1/4">
+                <label
+                  for="default-search"
+                  class="mb-2 text-sm font-medium text-orange-900 sr-only dark:text-white"
+                  >Buscar</label
+                >
+                <div class="relative">
+                  <div
+                    class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="w-5 h-5 text-orange-500 dark:text-orange-800"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    type="text"
+                    id="search"
+                    class="block w-full p-4 pl-10 bg-transparent outline-none text-sm border-b-2 border-b-orange-500 text-orange-900 dark:placeholder-gray-400 dark:focus:ring-orange-500 dark:focus:border-orange-500"
+                    placeholder="Buscar competiciones, resultados..."
+                    name="search"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative overflow-x-auto" id="matches-container">
+          <table
+            class="w-full text-sm text-left text-orange-700 font-bold bg-orange-200 scroll-smooth"
+            id="table-matches"
+          >
+            <caption
+              class="p-5 my-3 text-lg font-semibold text-left border-t-orange-600 border-t-[0.5px]"
+            ></caption>
+
+            <thead class="text-xs uppercase">
+              <tr></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div
+          role="status"
+          class="flex items-center justify-center h-56 w-full opacity-50 bg-gray-300 dark:bg-gray-300"
+          id="matches-skeleton"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+
+      <div class="m-10">
+        <div class="flex items-center justify-between py-3">
+          <h1
+            class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-orange-900 md:text-4xl lg:text-4xl flex justify-center items-center"
+            id="title-standings"
+          >
+            <span>Clasificaciones</span>
+          </h1>
+        </div>
+
+        <div class="relative overflow-x-auto" id="standings-container">
+          <table
+            class="w-full table-auto text-sm text-left text-orange-700 font-bold bg-orange-200 scroll-smooth"
+            id="table-standings"
+          >
+            <caption
+              class="p-5 my-3 text-lg font-semibold text-left border-t-orange-600 border-t-[0.5px]"
+            ></caption>
+
+            <thead class="text-xs uppercase">
+              <tr></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div
+          role="status"
+          class="flex items-center justify-center h-56 w-full opacity-50 bg-gray-300 dark:bg-gray-300"
+          id="standings-skeleton"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="p-10 border-b-orange-300 bg-gradient-to-r to-red-200 from-yellow-200 shadow-inner w-full overflow-hidden flex items-center relative"
+    >
+      <img
+        class="w-[5rem] scale-[5] grayscale opacity-40 absolute right-0 top-5"
+        src="../../images/laliga-logo.png"
+        alt="LaLiga Logo"
+      />
+      <div>
+        <p class="font-bold">
+          Develop:
+          <a
+            href="https://github.com/MarcAnt"
+            target="_blank"
+            rel="noopener noreferrer"
+            >@bymarcant</a
+          >
+        </p>
+        <br />
+        <p class="font-thin italic">
+          * Este sitio es solo para propósitos educativos y no pretende usar
+          información importante sobre &copy;
+          <a
+            href="https://www.laliga.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-semibold"
+          >
+            LaLiga
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

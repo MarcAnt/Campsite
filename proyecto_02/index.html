@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LaLiga</title>
+    <link href="./src/styles/output.css" rel="stylesheet" />
+    <script type="module" src="main.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body class="bg-yellow-50">
+    <header
+      class="border-b-[0.5px] border-b-orange-500 w-full p-5 bg-gradient-to-r to-red-200 from-yellow-200"
+    >
+      <nav class="flex justify-between items-center w-full h-full">
+        <div class="w-1/2 h-full flex items-center justify-center">
+          <a
+            href="../src/pages/tables/index.html#table-matches"
+            class="p-3 text-center flex items-center justify-center bg-black text-white md:font-bold md:text-sm lg:text-xl xl:text-xl"
+          >
+            <p class="drop-shadow-lg">Competiciones</p>
+          </a>
+        </div>
+
+        <span id="logoLaLiga" class="flex items-center justify-center"></span>
+
+        <div class="w-1/2 h-full flex items-center justify-center">
+          <a
+            href="../src/pages/tables/index.html#table-standings"
+            class="p-3 text-center flex items-center justify-center bg-black text-white md:font-bold md:text-sm lg:text-xl xl:text-xl"
+          >
+            <p class="drop-shadow-lg">Clasificaciones</p>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div
+          class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-5 grid-flow-row-dense lg:h-[100vh]"
+          id="team-links"
+        ></div>
+      </section>
+
+      <section
+        class="block bg-no-repeat bg-center bg-cover bg-[url('/src/images/player01.jpg')]"
+      >
+        <a
+          href="../src/pages/tables/index.html#table-matches"
+          class="drop-shadow-lg text-center flex items-center justify-center bg-gradient-to-r from-transparent to-blue-500 w-full h-full"
+        >
+          <p
+            class="h-[50vh] text-white md:font-bold sm:font-bold text-xl md:text-4xl flex items-center justify-center drop-shadow-lg animate__animated animate__bounce"
+          >
+            Competiciones
+          </p>
+        </a>
+      </section>
+
+      <section
+        class="block bg-no-repeat bg-center bg-cover bg-[url('/src/images/player02.avif')]"
+      >
+        <a
+          href="../src/pages/tables/index.html#table-standings"
+          class="text-center flex items-center justify-center bg-gradient-to-r from-lime-400 to-transparent w-full h-full"
+        >
+          <p
+            class="h-[50vh] text-white sm:font-bold text-xl md:text-4xl flex items-center justify-center drop-shadow-lg animate__animated animate__bounce"
+          >
+            Clasificaciones
+          </p>
+        </a>
+      </section>
+    </main>
+
+    <footer
+      class="p-10 border-b-orange-300 bg-gradient-to-r to-red-200 from-yellow-200 w-full shadow-inner overflow-hidden flex items-center relative"
+    >
+      <img
+        class="w-[5rem] scale-[5] grayscale opacity-40 absolute right-0 top-5"
+        src="./src/images/laliga-logo.png"
+        alt="LaLiga Logo"
+      />
+      <div>
+        <p class="font-bold">
+          Develop:
+          <a
+            href="https://github.com/MarcAnt"
+            target="_blank"
+            rel="noopener noreferrer"
+            >@bymarcant</a
+          >
+        </p>
+        <br />
+        <p class="font-thin italic">
+          * Este sitio es solo para propositos educativos y no pretender usar
+          informacion importante sobre &copy; LaLiga
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
