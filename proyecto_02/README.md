@@ -22,3 +22,8 @@
 - Usamos la API `fetch` para conectarnos a la API de LaLiga &copy; para poder generar disntintas tablas
 
 **Proyecto:**
+
+![image](https://user-images.githubusercontent.com/12266981/224577863-b756babb-0c37-4c86-bbeb-14ef80228bf4.png)
+
+![image](https://user-images.githubusercontent.com/12266981/224577963-006ca979-ac02-46ab-b7ff-9570380fcf03.png)
+
