@@ -50,6 +50,40 @@ export const setIcon = (
   });
 };
 
+export const getAccumulated = (
+  arr = [],
+  key = "",
+  nameKey = "",
+  otherProps = {}
+) => {
+  const total = arr
+    .filter((el) => el[key])
+    .map((el) => el[key])
+    .reduce((a, b) => {
+      return a + b;
+    }, 0);
+
+  return { ...otherProps, [nameKey]: total };
+};
+
+export const creaTableHeader = (thList = [], thead = HTMLTableElement) => {
+  let ths = ``;
+
+  thList.forEach((th) => {
+    ths += `
+      <tr>
+          <th scope="col" class=" gap-3 px-6 py-3">
+            <div class="flex items-center justify-center gap-3">
+                <span>${th}</span>
+            </div>
+          </th>
+      </tr>
+      `;
+  });
+
+  thead.insertAdjacentHTML("afterbegin", ths);
+};
+
 export const getLocalStorage = (name = "") => {
   return localStorage.getItem(name) ? true : false;
 };

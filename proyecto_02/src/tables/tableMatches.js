@@ -33,7 +33,7 @@ const creaTableHeader = () => {
           <th scope="col" class=" gap-3 px-6 py-3">
             <div class="flex items-center justify-center  gap-3">
                 <span>${th}</span>
-                <span style="fill: orange">
+                <span style="fill: black">
   
                     ${displayIcons(iconsList, idx)}
   
@@ -147,65 +147,73 @@ export const displayMatches = async (
     $matchesConatiner.classList.add("flex");
   }
 
-  const filtered = data?.matches.map((el) => {
-    const score = el?.score;
+  const filtered = data?.matches
+    .filter(
+      (el) =>
+        el.score?.fullTime?.home !== null ||
+        (el.score?.fullTime?.home !== null &&
+          el.score?.fullTime?.away !== null) ||
+        el.score?.fullTime?.away !== null
+    )
+    .map((el) => {
+      const score = el?.score;
 
-    if (score.winner === "HOME_TEAM") {
-      el.homeTeam = {
-        ...el.homeTeam,
-        winner: true,
-      };
+      if (score.winner === "HOME_TEAM") {
+        el.homeTeam = {
+          ...el.homeTeam,
+          winner: true,
+        };
 
-      el.score = {
-        ...el.score,
-        winnerName: el.homeTeam.name,
-        loserName: el.awayTeam.name,
-      };
+        el.score = {
+          ...el.score,
+          winnerName: el.homeTeam.name,
+          loserName: el.awayTeam.name,
+        };
 
-      el.awayTeam = {
-        ...el.awayTeam,
-        winner: false,
-      };
-    }
+        el.awayTeam = {
+          ...el.awayTeam,
+          winner: false,
+        };
+      }
 
-    if (score.winner === "AWAY_TEAM") {
-      el.awayTeam = {
-        ...el.awayTeam,
-        winner: true,
-      };
+      if (score.winner === "AWAY_TEAM") {
+        el.awayTeam = {
+          ...el.awayTeam,
+          winner: true,
+        };
 
-      el.score = {
-        ...el.score,
-        winnerName: el.awayTeam.name,
-        loserName: el.homeTeam.name,
-      };
+        el.score = {
+          ...el.score,
+          winnerName: el.awayTeam.name,
+          loserName: el.homeTeam.name,
+        };
 
-      el.homeTeam = {
-        ...el.homeTeam,
-        winner: false,
-      };
-    }
+        el.homeTeam = {
+          ...el.homeTeam,
+          winner: false,
+        };
+      }
 
-    if (score.winner === "DRAW") {
-      el.awayTeam = {
-        ...el.awayTeam,
-        winner: "DRAW",
-      };
+      if (score.winner === "DRAW") {
+        el.awayTeam = {
+          ...el.awayTeam,
+          winner: "DRAW",
+        };
 
-      el.score = {
-        ...el.score,
-        winnerName: el.awayTeam.name,
-        loserName: el.homeTeam.name,
-      };
+        el.score = {
+          ...el.score,
+          winnerName: el.awayTeam.name,
+          loserName: el.homeTeam.name,
+        };
 
-      el.homeTeam = {
-        ...el.homeTeam,
-        winner: "DRAW",
-      };
-    }
+        el.homeTeam = {
+          ...el.homeTeam,
+          winner: "DRAW",
+        };
+      }
 
-    return el;
-  });
+      return el;
+    });
 
   const initialFiltered = filtered.filter((el) => {
     const homeTeam = el?.homeTeam;
@@ -505,8 +513,12 @@ export const displayMatches = async (
         }
 
         if (el === 4) {
-          td.innerHTML = `<button id="${item.id}" class="show-more text-white bg-black focus:outline-none font-medium text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 " >
-                          Mostrar
+          td.innerHTML = `<button id="${item.id}" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden md:font-bold md:text-sm lg:text-md  text-black group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200" >
+                                  <span
+                                  class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-black group-hover:bg-opacity-0"
+                                >
+                                  Mostrar
+                                </span>
                         </button>`;
           td.onclick = function () {
             toggleMoreInfo(item.id);

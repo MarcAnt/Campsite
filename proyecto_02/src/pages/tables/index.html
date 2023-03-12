@@ -20,9 +20,13 @@
         <div class="w-1/2 h-full flex items-center justify-center">
           <a
             href="#table-matches"
-            class="p-3 text-center flex items-center justify-center bg-black text-white md:font-bold md:text-sm lg:text-xl xl:text-xl"
+            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden md:font-bold md:text-sm lg:text-xl xl:text-xl text-black group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200"
           >
-            <p class="drop-shadow-lg">Competiciones</p>
+            <span
+              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-black group-hover:bg-opacity-0"
+            >
+              Competiciones
+            </span>
           </a>
         </div>
 
@@ -31,16 +35,20 @@
         <div class="w-1/2 h-full flex items-center justify-center">
           <a
             href="#table-standings"
-            class="p-3 text-center flex items-center justify-center bg-black text-white md:font-bold md:text-sm lg:text-xl xl:text-xl"
+            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden md:font-bold md:text-sm lg:text-xl xl:text-xl text-black group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200"
           >
-            <p class="drop-shadow-lg">Clasificaciones</p>
+            <span
+              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-black group-hover:bg-opacity-0"
+            >
+              Clasificaciones
+            </span>
           </a>
         </div>
       </nav>
     </header>
 
-    <main>
-      <div class="m-10 flex" aria-label="Breadcrumb">
+    <main class="m-10">
+      <div class="flex" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-3">
           <li class="inline-flex items-center">
             <a
@@ -86,10 +94,10 @@
         </ol>
       </div>
 
-      <div class="m-10">
+      <div>
         <div class="items-center w-full">
           <div
-            class="flex items-center w-full justify-between py-3 search-bar-container"
+            class="flex lg:items-center sm:flex-col md:flex-col lg:flex-row w-full lg:justify-between py-3 search-bar-container"
           >
             <h1
               class="animate__fadeInDown mb-4 text-2xl font-extrabold leading-none tracking-tight text-orange-900 md:text-4xl lg:text-4xl flex justify-center items-center"
@@ -109,7 +117,7 @@
                       value="ALL"
                       name="filter-matches"
                       data-search-by=""
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                      class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-orange-500 dark:focus:ring-orange-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
                     />
                     <label
                       for="all"
@@ -165,7 +173,7 @@
                 </div>
               </div>
 
-              <form id="search-form" class="w-1/4">
+              <form id="search-form" class="sm:w-1/2 lg:w-1/4">
                 <label
                   for="default-search"
                   class="mb-2 text-sm font-medium text-orange-900 sr-only dark:text-white"
@@ -228,8 +236,119 @@
         </div>
       </div>
 
-      <div class="m-10">
+      <div
+        class="flex justify-between sm:flex-col lg:flex-row my-10 w-full gap-5"
+      >
+        <div class="sm:w-full md:w-full lg:w-1/2">
+          <div class="flex items-center justify-between py-3">
+            <h1
+              class="mb-4 text-xl font-extrabold leading-none tracking-tight text-orange-900 md:text-md lg:text-xl flex justify-center items-center"
+              id="title-top-five-avg"
+            >
+              <span>
+                Top 5 equipos con mayor media de goles a favor por partido
+              </span>
+            </h1>
+          </div>
+          <div
+            class="relative overflow-x-auto"
+            id="table-top-five-avg-container"
+          >
+            <table
+              class="w-full table-auto text-sm text-left text-orange-700 font-bold bg-orange-200 scroll-smooth"
+              id="table-top-five-avg"
+            >
+              <caption
+                class="p-5 my-3 text-lg font-semibold text-left border-t-orange-600 border-t-[0.5px]"
+              ></caption>
+
+              <thead class="text-xs uppercase">
+                <tr></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="sm:w-full md:w-full lg:w-1/2">
+          <div class="flex items-center justify-between py-3">
+            <h1
+              class="mb-4 text-xl font-extrabold leading-none tracking-tight text-orange-900 md:text-md lg:text-xl flex justify-center items-center"
+              id="title-top-five"
+            >
+              <span>
+                Top 5 equipos con menos goles en contra como visitante
+              </span>
+            </h1>
+            <!-- <button
+              class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-black group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200"
+            >
+              <span
+                class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-black group-hover:bg-opacity-0"
+              >
+                Purple to pink
+              </span>
+            </button> -->
+          </div>
+          <div
+            class="relative overflow-x-auto"
+            id="table-top-five-avg-container"
+          >
+            <table
+              class="w-full table-auto text-sm text-left text-orange-700 font-bold bg-orange-200 scroll-smooth"
+              id="table-top-five-less"
+            >
+              <caption
+                class="p-5 my-3 text-lg font-semibold text-left border-t-orange-600 border-t-[0.5px]"
+              ></caption>
+
+              <thead class="text-xs uppercase">
+                <tr></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="my-10">
         <div class="flex items-center justify-between py-3">
+          <h1
+            class="mb-4 text-xl font-extrabold leading-none tracking-tight text-orange-900 md:text-md lg:text-xl flex justify-center items-center"
+            id="title-stats"
+          >
+            <span> Estadísticas </span>
+          </h1>
+          <!-- <button
+            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-black group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200"
+          >
+            <span
+              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-black group-hover:bg-opacity-0"
+            >
+              Purple to pink
+            </span>
+          </button> -->
+        </div>
+        <div class="relative overflow-x-auto" id="table-stats-container">
+          <table
+            class="w-full table-fixed text-sm text-left text-orange-700 font-bold bg-orange-200 scroll-smooth"
+            id="table-stats"
+          >
+            <caption
+              class="p-5 my-3 text-lg font-semibold text-left border-t-orange-600 border-t-[0.5px]"
+            ></caption>
+
+            <thead class="text-xs uppercase">
+              <tr></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="my-10">
+        <div
+          class="flex lg:items-center sm:flex-col md:flex-col lg:flex-row w-full lg:justify-between py-3"
+        >
           <h1
             class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-orange-900 md:text-4xl lg:text-4xl flex justify-center items-center"
             id="title-standings"

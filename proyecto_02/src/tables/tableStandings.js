@@ -21,7 +21,7 @@ const creaTableHeaderStandings = () => {
   let ths = ``;
   const thead = $tableStandings.children[1].children[0];
 
-  thListTitles.forEach((th, idx) => {
+  thListTitles.forEach((th) => {
     ths += `
 
       <tr>
@@ -140,11 +140,13 @@ export const displayStandings = async (filter = "", limitResults = 10) => {
           td.classList.add("py-4", "text-center");
 
           if (item === 0) {
+            td.classList.add("w-5");
             td.innerHTML = `<div>${position}</div>`;
           }
           if (item === 1) {
+            td.classList.add("flex", "items-center", "justify-between", "w-52");
             td.innerHTML = `
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between w-full">
               <div class="flex items-center w-[1rem]"> 
                 <img src="${team.crest}" alt="${team.name}" > 
               </div> 
@@ -173,10 +175,11 @@ export const displayStandings = async (filter = "", limitResults = 10) => {
             td.innerHTML = `<div>${goalDifference}</div>`;
           }
           if (item === 8) {
+            td.classList.add("w-5");
             td.innerHTML = `<div>${points}</div>`;
           }
           if (item === 9) {
-            td.classList.add("flex", "items-center", "justify-center");
+            td.classList.add("flex", "items-center", "justify-center", "w-52");
             td.innerHTML = `
             ${transformLastFive(form)}
   

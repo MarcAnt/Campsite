@@ -1,6 +1,7 @@
 import { getStandings } from "./src/api/getStandings";
 import { getMatches } from "./src/api/getMatches";
 import { getLocalStorage, parseLocalStorage } from "./src/Utils";
+import { generateTopFive } from "./src/tables/tableTopFive";
 
 const main = () => {
   const $checkboxsFilters = document.querySelector("#checkbox-filters");
@@ -73,7 +74,7 @@ const main = () => {
           }</p>
           
           
-          <img class="object-fit max-w-20 max-h-20 transition-all ease-in-out delay-50 lg:group-hover:scale-150 lg:group-hover:translate-x-40 lg:group-hover:opacity-60 lg:group-hover:grayscale lg:group-hover:absolute" src="${
+          <img class="object-fit max-w-20 max-h-20 transition-all ease-in-out delay-50 lg:group-hover:scale-150 lg:group-hover:translate-x-40 lg:group-hover:opacity-0 lg:group-hover:grayscale lg:group-hover:absolute" src="${
             team.crest
           }" alt="${team.name}">
           
@@ -103,7 +104,7 @@ const main = () => {
     const { competition } = data;
     const emblem = competition?.emblem;
 
-    $logoLaLiga.innerHTML = `<a href="index.html"><img class="object-cover w-1/2" src="${emblem}" alt="Logo LaLiga"></a>`;
+    $logoLaLiga.innerHTML = `<a href="index.html"  class="flex justify-center items-center" ><img class="object-cover w-1/2" src="${emblem}" alt="Logo LaLiga"></a>`;
   };
 
   setLogoLaLiga();
