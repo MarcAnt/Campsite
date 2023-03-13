@@ -126,7 +126,7 @@ export const generateTopFive = async (matches = []) => {
     });
 
     const totalLessTopFive = accGoalsAway
-      .sort((a, b) => a.goals_away - b.goals_away)
+      .sort((a, b) => b.goals_away - a.goals_away)
       .slice(0, 5);
 
     const totalStats = await generateStats(matches);
